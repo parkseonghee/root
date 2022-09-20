@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .point{position:relative; left:270px; top:15px;}
+      #back{position:relative;top:385px;left:200px;}
+      #next{position:relative; left:410px;bottom:-100px;}
+      #img01{position:relative; bottom:-50px;left:250px;}
+      #img02{position:relative; bottom:-50px;left:250px;}
+      #img03{position:relative; bottom:-50px;left:250px;}
+      #img04{position:relative; bottom:-50px;left:250px;}
+      #img05{position:relative; bottom:-50px;left:250px;}
+      #img06{position:relative; bottom:-50px;left:250px;}
+      #img07{position:relative; bottom:-50px;left:250px;}
+      .move{position:relative; bottom:-50px; left:250px;}
+    </style>
+  </head>
+  <body>
+
+<div class="move">
+
+
+    <img id="back" src="back.png" alt="" width="197" height="50">
+    <img id="img01" src="img01.jpg" alt="" width="225" height="225">
+    <img id="img02" src="img02.jpg" alt="" width="225" height="225">
+    <img id="img03" src="img03.jpg" alt="" width="225" height="225">
+    <img id="img04" src="img04.jpg" alt="" width="225" height="225">
+    <img id="img05" src="img05.jpg" alt="" width="225" height="225">
+    <img id="img06" src="img06.jpg" alt="" width="225" height="225">
+    <img id="img07" src="img07.jpg" alt="" width="225" height="225">
+    <img id="next" src="next.png" alt="" width="197" height="50">
+  </div>
+
+
+
+    <script>
+      var img01 = document.getElementById('img01');
+      var img02 = document.getElementById('img02');
+      var img03 = document.getElementById('img03');
+      var img04 = document.getElementById('img04');
+      var img05 = document.getElementById('img05');
+      var img06 = document.getElementById('img06');
+      var img07 = document.getElementById('img07');
+
+      var back = document.getElementById("back");
+      var next = document.getElementById('next');
+
+
+
+      var count = 1;
+      imgView();
+
+      img01.style.display="block";
+
+      back.addEventListener("click",function () {
+
+        if (count>1) {
+          count--;
+          imgView();
+        }
+      })
+
+      next.addEventListener("click",function () {
+
+        if (count<7) {
+          count++;
+          imgView();
+        }
+      })
+
+
+
+
+
+      function imgView() {
+        img01.style.display="none";
+        img02.style.display="none";
+        img03.style.display="none";
+        img04.style.display="none";
+        img05.style.display="none";
+        img06.style.display="none";
+        img07.style.display="none";
+
+        if (count==1) {
+          img01.style.display="block";
+        }else if (count==2) {
+          img02.style.display="block";
+        }else if(count==3){
+          img03.style.display="block";
+        }else if (count==4) {
+          img04.style.display="block";
+        }
+        else if (count==5) {
+          img05.style.display="block";
+        }else if (count==6) {
+          img06.style.display="block";
+        }
+        else if (count==7) {
+          img07.style.display="block";
+        }
+      }
+
+    </script>
+  </body>
+
+</html>
